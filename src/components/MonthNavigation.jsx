@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Section } from "../pages/Home"
+// import { Section } from "../pages/Home"
 
 const MonthWrapper = styled.div`
     display: flex;
@@ -44,10 +44,14 @@ background: ${(props) =>
 
 const MONTHS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
-const MonthNavigation = () => {
+export default function MonthNavigation() {
     return (
-        <div>MonthNavigation</div>
+        <Section>
+            <MonthWrapper>
+                {MONTHS.map((month) => {
+                    return <MonthButton>{`${month}월`}</MonthButton>
+                })}
+            </MonthWrapper>
+        </Section>
     )
 }
-
-export default MonthNavigation
